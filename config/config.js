@@ -9,13 +9,9 @@ const appendConfig = (config) => {
 }
 
 const getConfig = (callBack) => {
-    execOnce = () => {
-        window.electron.ipcRenderer.once('getPluginConfig', config => {
-            if (config.plugin == 'parker-desktop-plugins-clima') {
+    const execOnce = () => {
+        window.electron.ipcRenderer.once('parker-desktop-plugins-clima-config', config => {
                 callBack(config.config);
-            } else {
-                execOnce();
-            }
         });
     }
     execOnce();
