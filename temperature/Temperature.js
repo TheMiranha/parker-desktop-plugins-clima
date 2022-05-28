@@ -1,5 +1,5 @@
 const axios = require('axios');
-const ENDPOINT = 'https://parker-temperature.herokuapp.com';
+const ENDPOINT = 'https://parker-servers-temperature.herokuapp.com';
 
 const getServerStatus = async() => {
     var response = await axios.get(ENDPOINT);
